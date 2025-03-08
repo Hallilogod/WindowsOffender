@@ -16,6 +16,7 @@ WindowsOffender is not a typical rootkit. It doesn't have completely bulletproof
 
 - Automatic firewall rule adding option in the installer
 - Robust SetupExecute adding / removing mechanism in case the value already contains something
+- Driver and server binary runtime extracting from the driverloader to only have a single file on disk
 - Hiding of the SetupExecute driver loader entry
 - Process hiding mechanism
 - An option to make the server send something to a specified address so you can know the ip address of the system, this might also replace the server listening in the future because it can establish a connection from the system and thus bypass firewalls
