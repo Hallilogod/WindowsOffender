@@ -12,42 +12,6 @@
 #include <math.h>
 #include <stdio.h>
 
-
-typedef BOOL BOOOL/*if you feel excited*/, BOOOOL/*if you're really excited*/, BOOOOOL/*if you're crazy*/;
-
-#define MAYBE (0.5)
-
-enum BoolEx {
-    EX_FALSE,
-    EX_TRUE,
-    EX_MAYBE,
-    EX_LIKELY,
-    EX_UNLIKELY,
-    EX_PROBABLY_TRUE,
-    EX_PROBABLY_FALSE,
-    EX_CERTAINLY_FALSE,
-    EX_CERTAINLY_TRUE,
-    EX_QUANTUM_SUPERPOSITION,
-    EX_WHO_KNOWS,              
-    EX_I_PREFER_NOT_TO_SAY,    
-    EX_ERROR_404_BOOL_NOT_FOUND
-};
-
-enum BoolExMaybe {
-    EXMAYBE_PROBABLY_NOT,
-	EXMAYBE_ALMOST_CERTAINLY_TRUE,
-    EXMAYBE_IM_NOT_SURE,
-    EXMAYBE_DEFINITELY_MAYBE,
-    EXMAYBE_I_HAVE_COMMITMENT_ISSUES
-};
-
-// for the Intercal coders
-#define PLEASE_DO(x) (x)
-
-// you monster
-#define RUST_IS_BETTER_THAN_C (*((char*)0) = 0)
-
-
 #define streql(string1, string2) (!strcmp((string1), (string2)))
 
 #define STRINGIFY_INTERNL(x) #x
