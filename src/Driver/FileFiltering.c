@@ -776,7 +776,7 @@ NTSTATUS FfRegisterFileFilter(PDRIVER_OBJECT pDriverObject, PFLT_FILTER* pFltFil
 			sizeof(FLT_REGISTRATION),						// Size
 			FLT_REGISTRATION_VERSION,						// Version
 #ifndef DEBUG 
-			FLTFL_REGISTRATION_DO_NOT_SUPPORT_SERVICE_STOP,	// Flags for debug builds
+			FLTFL_REGISTRATION_DO_NOT_SUPPORT_SERVICE_STOP,	// Flags for non-debug builds
 #else		
 			0,												// Flags
 #endif														
