@@ -1,0 +1,1 @@
+windres LoaderResources.rc -O coff -o LoaderResources.res

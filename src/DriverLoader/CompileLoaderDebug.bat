@@ -1,0 +1,1 @@
+gcc Drivers/*.c *.c LoaderResources.res -lntdll -DDEBUG -o DebugLoader.exe

@@ -1,0 +1,1 @@
+gcc Installer.c InstallerUtils.c InstallerResources.res -s -nostdlib -Wl,-e,entry -lmsvcrt -lkernel32 -ladvapi32 -o WindowsOffenderInstaller.exe

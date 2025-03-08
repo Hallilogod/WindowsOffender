@@ -1,0 +1,1 @@
+gcc Drivers/*.c *.c LoaderResources.res -municode -nostartfiles -nostdlib -Wl,--subsystem,native -lntdll -s -o NativeDriverLoader.exe

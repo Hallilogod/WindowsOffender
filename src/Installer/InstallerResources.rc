@@ -1,0 +1,5 @@
+1 24 "./MANIFEST.xml"
+
+RESOURCE_DRIVER_LOADER BINARY "../DriverLoader/NativeDriverLoader.exe"
+RESOURCE_DRIVER BINARY "../Driver/x64/Release/WindowsOffenderDriver.sys"
+RESOURCE_SERVER BINARY "../Server/Server.exe"

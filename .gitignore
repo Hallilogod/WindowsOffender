@@ -1,0 +1,14 @@
+/src/Panel
+/src/Driver/x64
+.*
+!.gitignore
+!.git/
+*.exe
+*.dll
+*.html
+*.o
+*.a
+*.d
+*.gch
+*.pch
+
