@@ -6,6 +6,7 @@ cmd /c "Compile"
 cd ..
 cd DriverLoader
 del NativeDriverLoader.exe
+cmd /c "CompileLoaderResources"
 cmd /c "CompileLoader"
 cd ..
 cd Installer
