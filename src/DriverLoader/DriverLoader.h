@@ -368,7 +368,7 @@ VOID RtlInitUnicodeString(PUNICODE_STRING DestinationString, PCWSTR SourceString
 
 int printf(const char *format, ...);
 
-#define PATTERN_SEARCH_RANGE 0xBFFFFF
+#define PATTERN_SEARCH_RANGE 0x8FFFFFF
 
 typedef struct _BIN_RESOURCE
 {

