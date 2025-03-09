@@ -15,3 +15,4 @@ del WindowsOffenderInstaller.exe
 cmd /c "CompileInstallerResources"
 cmd /c "CompileInstaller"
 move WindowsOffenderInstaller.exe ..
+cd ..
