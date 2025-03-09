@@ -4,6 +4,7 @@
 !.gitignore
 !.git/
 *.exe
+*.res
 *.dll
 *.html
 *.o
@@ -11,4 +12,3 @@
 *.d
 *.gch
 *.pch
-

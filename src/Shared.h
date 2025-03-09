@@ -3,8 +3,8 @@
 /*--- Configuration part ---*/
 
 /* The server password/key used for panel-server communication, can be smaller than 256 bit but can't exceed it.
-   Please pick a decent one :) if the password is longer than 32 bytes (256 bit) the server will not function, its literally
-   the first sanity check that the server does. if the password is smaller, the other bytes after it will be zeroed.
+ls   Please pick a decent one :) if the password is longer than 32 bytes (256 bit) the server will not compile.
+   if the password is smaller, the other bytes after it will internally be zeroed.
 */
 #define SERVER_PASSWORD ""
 
