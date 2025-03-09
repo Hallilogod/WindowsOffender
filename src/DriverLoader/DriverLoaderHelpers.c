@@ -68,11 +68,13 @@ PVOID SearchForPatternPhysical(
 
 	if(buffer == NULL)
 	{
+		dbgprintf("Failed to allocate heap buffer\n");
 		return NULL;
 	}
 
 	if(!physicalReadMemoryDriverRoutine(driverHandle, startAddress, buffer, searchRange))
 	{
+		dbgprintf("Physical driver read routine failed\n");
 		result = NULL;
 		goto _SearchForPatternPhysical_Exit;
 	}
@@ -90,7 +92,7 @@ PVOID SearchForPatternPhysical(
         if (j == sizeOfPattern)	// Check for full match
 		{  
             result = (PVOID)((PBYTE)startAddress + i);
-            break;
+        	break;
         }
     }
 

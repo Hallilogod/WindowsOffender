@@ -8,7 +8,10 @@ WindowsOffender is not a typical rootkit. It doesn't have completely bulletproof
 
 # Important current limitations
 
-- WindowsOffender currently requires you to know know the ip address of the machine you installed it on because the server simply listens on a port for requests. This makes the current version
+**Help needed for Windows 11:**
+WindowsOffender currently does not work on Windows 11 because the pattern search of the kernel's validation routines that the driver loader patches fails most times on win11 and i wasn't able to figure out why this happens. You are very very welcomed to look into this issue and figure out why it doesn't work. The pattern itself isn't different in the windows 11 kernel and the locating does in fact sometimes work, its very confusing. Take a peek at the SearchForPatternPhysical calls in [DriverLoader.c](src/DriverLoader/DriverLoader.c). I'd really appreaciate any help!
+
+- WindowsOffender currently requires you to know know the ip address of the machine you installed it on because the server simply listens on a port for requests.
 - Because the driver loader is executed by the Session Manager via the SetupExecute registry value you should make sure that the system you install WindowsOffender on do not use this key for anything else important (which is basically never the case) as it currently only writes itself into that value and deletes the value when uninstalled.
 - The current version does not hide the server process
 
