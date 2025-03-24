@@ -1,6 +1,6 @@
 # Welcome to WindowsOffender
 
-WindowsOffender is a management software and rootkit for Windows managable over a [Web Panel](https://github.com/a-catgirl-dev/windows-offender-panel) and is the largest project i ever made for now. All components of it are written in C, except for the panel, which is written by [William](https://github.com/a-catgirl-dev) because i can't do web dev, though she [also struggles with it a lot](https://github.com/a-catgirl-dev/windows-offender-panel/commit/f61854c597aed2c7b1f91b7a1f5bfdaca474e7a1).
+WindowsOffender is a management software and rootkit for Windows managable over a [Web Panel](https://github.com/a-catgirl-dev/windows-offender-panel) and is the largest project i ever made for now. All components of it are written in C, except for the panel, which is written by [a catgirl](https://github.com/a-catgirl-dev) because i can't do web dev, though she [also struggles with it a lot](https://github.com/a-catgirl-dev/windows-offender-panel/commit/f61854c597aed2c7b1f91b7a1f5bfdaca474e7a1).
 
 # What this is
 
